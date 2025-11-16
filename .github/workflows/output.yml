@@ -1,0 +1,12 @@
+name: output information # Name of the GitHub Actions workflow
+on: workflow_dispatch # Trigger the workflow on manual dispatch
+jobs:
+
+  output_info: # This is a job named "output_info"
+    runs-on: ubuntu-latest # The job will run on the latest Ubuntu runner
+    steps: # Steps represent a sequence of tasks to be executed as part of the job
+
+      - name: Output Github context info # This step outputs GitHub context information
+        run: | # Multi-line command
+          echo "This is a sample output workflow." # Sample output message
+          echo "${{ toJson(github) }}" # Outputs the GitHub context as JSON
